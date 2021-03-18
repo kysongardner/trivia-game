@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Add Question</title>
+    <script src="js/headerFooter.js" type="module"></script>
+</head>
+
+<body>
+    <header id="header">
+
+    </header>
+    <main>
+        <form>
+            <div id="grid-container">
+                <input type="text" id="question-input" placeholder="QUESTION HERE"><br><br>
+
+                <input id="answer-one" class="question-input" placeholder="Answer 1" required></input>
+
+                <input id="answer-two" class="question-input" placeholder="Answer 2" required></input>
+
+                <input id="answer-three" class="question-input" placeholder="Answer 3" required></input>
+
+                <input id="answer-four" class="question-input" placeholder="Answer 4" required></input><br><br>
+
+                <div id="topics-container">
+                    <label id="topics-label" for="topics">Topic:</label>
+                    <select name="topics" id="topics">
+                        <option value="Select One">Select One</option>
+                        <option value="Sports">Sports</option>
+                        <option value="Movies">Movies</option>
+                        <option value="Food">Food</option>
+                        <option value="People">People</option>
+                        <option value="History">History</option>
+                        <option value="Science">Science</option>
+                        <option value="Technology">Technology</option>
+                    </select>
+                </div>
+                <div id="difficulty-container">
+                    <label id="difficulty-label" for="difficulty">Difficulty:</label>
+                    <select name="difficulty" id="difficulty">
+                        <option value="Select One">Select One</option>
+                        <option value="Easy">Easy</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Hard">Hard</option>
+                    </select>
+                </div>
+        </form>
+        <button id="add-question">Add Question</button>
+        </div>
+    </main>
+
+</body>
+
+</html>

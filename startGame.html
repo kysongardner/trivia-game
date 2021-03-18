@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Start Game</title>
+    <script src="js/headerFooter.js" type="module"></script>
+</head>
+
+<body>
+    <header id="header">
+    </header>
+        <main>
+            <h1 id="start-game-header">Choose Difficulty:</h1>
+            <fieldset id="start-game-fieldset">
+                <input type="radio" id="easy" name="difficulty" value="Easy">
+                <label class="difficulty-label" for="easy">Easy</label>
+
+                <input type="radio" id="medium" name="difficulty" value="medium">
+                <label class="difficulty-label" for="medium">Medium</label>
+
+                <input type="radio" id="hard" name="difficulty" value="hard">
+                <label class="difficulty-label" for="hard">Hard</label>
+            </fieldset>
+
+            <div id="start-game-topics-container">
+                <label id="start-game-topics-label" for="topics">Topic:</label>
+                <select name="topics" id="start-game-topics">
+                    <option value="Select One">Select One</option>
+                    <option value="Random">Random</option>
+                    <option value="Sports">Sports</option>
+                    <option value="Movies">Movies</option>
+                    <option value="Food">Food</option>
+                    <option value="People">People</option>
+                    <option value="History">History</option>
+                    <option value="Science">Science</option>
+                    <option value="Technology">Technology</option>
+                </select>
+            </div>
+            <div id="start-game-button-container">
+                <button id="start-game-button">Start Game</button>
+            </div>
+        </main>
+    <footer></footer>
+</body>
+
+</html>

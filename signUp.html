@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Sign Up</title>
+    <script src="js/signUp.js"></script>
+    <script src="js/headerFooter.js" type="module"></script>
+</head>
+<body>
+    <header id="header">
+        
+    </header>
+    <main>
+        <form action="/api/register" method="POST">
+            <fieldset>
+
+                <label for="email">Email:</label><span class="required">*</span>
+                <input type="text" id="email" placeholder="email" required>
+
+                <label for="username">Username:</label><span class="required">*</span>
+                <input type="text" id="username" placeholder="username" required>
+                
+                <label for="password">Password:</label><span class="required">*</span>
+                <input type="password" id="password" placeholder="password" required>
+
+                <label for="confirm-password">Confirm Password:</label><span class="required">*</span>
+                <input type="password" id="confirm-password" placeholder="confirm password" required>
+                
+                <input type="submit" id="signup-button">SIGN UP</input>
+                <label>or <a href="login.html">Login</a></label>
+            </fieldset>
+        </form>
+    </main>
+</body>
+</html>

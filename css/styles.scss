@@ -1,0 +1,334 @@
+// Variables
+$top-left: red;
+$top-right: blue;
+$bottom-left: orange;
+$bottom-right: green;
+$question-input-box: lavender;
+$button-background-color: lavender;
+
+// HEADER
+
+header {
+  div {
+    width: 35px;
+    height: 5px;
+    background-color: black;
+    transition: 0.5s;
+  }
+  .button {
+    transition: 0.5s;
+    position: fixed;
+    right: 0;
+    z-index: 2;
+    margin-right: 20px;
+  }
+  .bar1,
+  .bar2,
+  .bar3 {
+    margin-top: 6px;
+  }
+  position: fixed;
+  top: 0;
+  float: right;
+  transition: 0.5s;
+  z-index: 10;
+  margin-bottom: 50px;
+  width: 100%;
+}
+
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  right: 0;
+  background-color: black; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 80px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  font-size: 36px;
+  margin-left: 50px;
+
+}
+
+// General
+@import url("https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap");
+
+* {
+  font-family: "Happy Monkey", cursive;
+  box-sizing: border-box;
+}
+h1 {
+  text-align: center;
+}
+
+.required {
+  color: red;
+}
+
+// Login Page
+@media only screen and(max-width: 500px){
+  #login-fieldset{
+    width: 50px;
+    background-color: blue;
+  }
+}
+.form> {
+  display: block;
+  text-align: center;
+}
+fieldset {
+  width: 5em;
+  margin: 0 auto;
+}
+button {
+  background-color: $button-background-color;
+}
+
+input[type="text"] {
+  margin: 0.2em;
+  padding: 1em;
+  width: 30em;
+  margin-bottom: 2em;
+}
+label,
+button {
+  font-size: larger;
+  font: "Happy Monkey";
+}
+
+// Sign up Page
+input[type="password"] {
+  margin: 0.2em;
+  padding: 1em;
+  width: 30em;
+  margin-bottom: 2em;
+}
+#signup-button {
+  width: 7em;
+}
+
+// Add Question Page
+#grid-container {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1em;
+  justify-items: center;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+#question-input {
+  grid-column: 1/-1;
+  width: 100%;
+  margin-bottom: -4em;
+}
+
+#answer-one {
+  grid-column: 1/2;
+  width: 5em;
+  height: 5em;
+  padding: 2em;
+  text-align: center;
+  font-size: large;
+  background-color: $question-input-box;
+}
+
+#answer-two {
+  grid-column: 2/3;
+  width: 5em;
+  height: 5em;
+  padding: 2em;
+  text-align: center;
+  font-size: large;
+  background-color: $question-input-box;
+}
+
+#answer-three {
+  grid-column: 1/2;
+  width: 5em;
+  height: 5em;
+  padding: 2em;
+  text-align: center;
+  font-size: large;
+  background-color: $question-input-box;
+}
+
+#answer-four {
+  grid-column: 2/3;
+  width: 5em;
+  height: 5em;
+  padding: 2em;
+  text-align: center;
+  font-size: large;
+  background-color: $question-input-box;
+}
+#topics-container {
+  margin-top: -5em;
+  grid-column: 1/2;
+}
+#difficulty-container {
+  margin-top: -5em;
+  grid-column: 2/3;
+}
+#add-question {
+  grid-column: 1/-1;
+  margin-top: -1em;
+  padding: 1em;
+}
+
+// Gameplay Page
+#grid-container-gameplay {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1em;
+  justify-items: center;
+  margin: 0 auto;
+  max-width: 800px;
+}
+#points-div {
+  grid-column: 1/-1;
+}
+#gameplay-question-container {
+  grid-column: 1/-1;
+}
+#gameplay-question {
+  // you would generate the actual question here
+}
+#answer-one-div {
+  color: white;
+  grid-column: 1/2;
+  width: 5em;
+  height: 5em;
+  padding: 2em;
+  text-align: center;
+  font-size: large;
+  border: 2px solid black;
+  background-color: $top-left;
+}
+
+#answer-two-div {
+  color: white;
+  grid-column: 2/3;
+  width: 5em;
+  height: 5em;
+  padding: 2em;
+  text-align: center;
+  font-size: large;
+  border: 2px solid black;
+  background-color: $top-right;
+}
+
+#answer-three-div {
+  color: white;
+  grid-column: 1/2;
+  width: 5em;
+  height: 5em;
+  padding: 2em;
+  text-align: center;
+  font-size: large;
+  border: 2px solid black;
+  background-color: $bottom-left;
+}
+
+#answer-four-div {
+  color: white;
+  grid-column: 2/3;
+  width: 5em;
+  height: 5em;
+  padding: 2em;
+  text-align: center;
+  font-size: large;
+  border: 2px solid black;
+  background-color: $bottom-right;
+}
+
+// Start Game
+#start-game-header {
+  background-color: lavender;
+  padding: 0.1em;
+  text-align: center;
+}
+#start-game-topics-container {
+  background-color: lavender;
+  margin-top: 1em;
+  padding: 0.5em;
+  text-align: center;
+  font-size: x-large;
+}
+.difficulty-label {
+  padding-right: 2em;
+  margin: 0 auto;
+  max-width: 100%;
+}
+#start-game-fieldset {
+  text-align: center;
+  font-size: larger;
+}
+#start-game-topics {
+  font-size: 1.5rem;
+}
+
+#start-game-topics option {
+  font-size: 1.5rem;
+}
+#start-game-button-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+#start-game-button {
+  grid-column: 2/3;
+  margin-top: 1em;
+  padding: 1em;
+}
+
+// High Scores
+
+#high-scores {
+  display: table;
+  margin: 0 auto;
+  max-width: 100%;
+  margin-top: 2em;
+}
+
+table {
+  margin: 0 auto;
+  max-width: 100%;
+  margin-top: 1em;
+}
+table,
+th,
+tr,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 1em;
+}
+th {
+  background-color: purple;
+}
+tr:nth-child(odd) {
+  background-color: lavender;
+}
+tr:nth-child(even) {
+  background-color: lavenderblush;
+}
