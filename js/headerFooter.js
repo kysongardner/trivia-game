@@ -57,6 +57,8 @@ function getHeaderContents() {
   });
 }
 function addFooter(){
-  const footerText = `<footer>Copyright &copy; 2021 Trivia Game Team</footer>`
-  document.getElementsByTagName("main").appendChild(addFooter)
+  const footer = document.createElement("footer")
+  footer.innerHTML = "Copyright &copy; 2021 Trivia Game Team"
+  document.querySelector("main").appendChild(footer)
+
 }

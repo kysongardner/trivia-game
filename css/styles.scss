@@ -69,10 +69,10 @@ header {
 }
 
 // General
-@import url("https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Ranchers&display=swap');
 
 * {
-  font-family: "Happy Monkey", cursive;
+  font-family: 'Ranchers', cursive;
   box-sizing: border-box;
 }
 h1 {
@@ -82,12 +82,22 @@ h1 {
 .required {
   color: red;
 }
+footer{
+  margin-top: 1em;
+}
+
+// buttons
+input[type=submit]{
+  border-radius: 10%;
+  padding: 1em;
+  background-color: #00ccff;
+  font-size: x-large;
+}
 
 // Login Page
 @media only screen and(max-width: 500px){
   #login-fieldset{
-    width: 50px;
-    background-color: blue;
+    max-width: 5em;
   }
 }
 .form> {
@@ -102,7 +112,7 @@ button {
   background-color: $button-background-color;
 }
 
-input[type="text"] {
+input[type=text] {
   margin: 0.2em;
   padding: 1em;
   width: 30em;
@@ -110,8 +120,8 @@ input[type="text"] {
 }
 label,
 button {
-  font-size: larger;
-  font: "Happy Monkey";
+  font-size: x-large;
+  font: "Ranchers";
 }
 
 // Sign up Page
@@ -196,6 +206,7 @@ input[type="password"] {
 }
 
 // Gameplay Page
+
 #grid-container-gameplay {
   align-items: center;
   display: grid;
@@ -262,6 +273,55 @@ input[type="password"] {
   background-color: $bottom-right;
 }
 
+@media only screen and (max-width: 600px){
+  #grid-container-gameplay{
+    display:block;
+    margin: 0 auto;
+    max-width: 50%;
+  }
+  #answer-one-div {
+    color: white;
+    grid-column: 1/2;
+    width: 5em;
+    height: 5em;
+    padding: 2em;
+    text-align: center;
+    font-size: large;
+    border: 2px solid black;
+    background-color: $top-left;
+  }
+  
+  #answer-two-div {
+    color: white;
+    grid-column: 2/3;
+    width: 5em;
+    height: 5em;
+    padding: 2em;
+    text-align: center;
+    font-size: large;
+    border: 2px solid black;
+    background-color: $top-right;
+  }
+  
+  #answer-three-div {
+    color: white;
+    grid-column: 1/2;
+    width: 5em;
+    height: 5em;
+    padding: 2em;
+    text-align: center;
+    font-size: large;
+    border: 2px solid black;
+    background-color: $bottom-left;
+  }
+  
+  #answer-four-div {
+    width: 25%;
+    height: 25%;
+  }
+  
+  }
+
 // Start Game
 #start-game-header {
   background-color: lavender;
@@ -275,21 +335,19 @@ input[type="password"] {
   text-align: center;
   font-size: x-large;
 }
-.difficulty-label {
-  padding-right: 2em;
-  margin: 0 auto;
-  max-width: 100%;
-}
-#start-game-fieldset {
+#start-game-fieldset{
+  width: 17em;
   text-align: center;
-  font-size: larger;
+}
+.difficulty-label {
+  max-width: 100%;
 }
 #start-game-topics {
   font-size: 1.5rem;
 }
 
 #start-game-topics option {
-  font-size: 1.5rem;
+  font-size: x-large;
 }
 #start-game-button-container {
   display: grid;
@@ -324,11 +382,11 @@ td {
   padding: 1em;
 }
 th {
-  background-color: purple;
+  background-color: #00ccff;
 }
 tr:nth-child(odd) {
-  background-color: lavender;
+  background-color: #e6faff;
 }
 tr:nth-child(even) {
-  background-color: lavenderblush;
+  background-color: #ccf5ff;
 }
