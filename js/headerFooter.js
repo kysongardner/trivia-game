@@ -31,34 +31,33 @@ function closeNav() {
 
 function getHeaderContents() {
   const markup = `
-    <div>
-      <h1>Trivia Game</h1>
-    </div>
-    <span>
-      <a href="javascript:void(0)" class="button" id="button" onclick="toggleNav()">
-        <div class="bar1" id="bar1"></div>
-        <div class="bar2" id="bar2"></div>
-        <div class="bar3" id="bar3"></div>
-      </a>
-    </span>
-    <div id="mySidenav" class="sidenav">
-      <a href="#">HOME</a>
-      <a href="highScores.html">High Scores</a>
-      <a href="addQuestion.html">Add Question</a>
-      <a href="gamePlay.html">Game Play</a>
-      <a href="login.html">Login</a>
-      <a href="signUp.html">Sign Up</a>
-      <a href="startGame.html">Start Game</a>
-    </div>
+  <div>
+    <h1 class="headerTitle">Trivia Game</h1>
+  </div>
+  <span>
+    <a href="javascript:void(0)" class="button" id="button" onclick="toggleNav()">
+      <div class="bar1" id="bar1"></div>
+      <div class="bar2" id="bar2"></div>
+      <div class="bar3" id="bar3"></div>
+    </a>
+  </span>
+  <div id="mySidenav" class="sidenav">
+    <a href="#">HOME</a>
+    <a href="highScores.html">High Scores</a>
+    <a href="addQuestion.html">Add Question</a>
+    <a href="gamePlay.html">Game Play</a>
+    <a href="login.html">Login</a>
+    <a href="signUp.html">Sign Up</a>
+    <a href="startGame.html">Start Game</a>
+  </div>
    `;
   document.querySelector("header").innerHTML = markup;
   document.querySelector(".button").addEventListener("click", function () {
     nav ? closeNav() : openNav();
   });
 }
-function addFooter(){
-  const footer = document.createElement("footer")
-  footer.innerHTML = "Copyright &copy; 2021 Trivia Game Team"
-  document.querySelector("main").appendChild(footer)
-
+function addFooter() {
+  const footer = document.createElement("footer");
+  footer.innerHTML = "Copyright &copy; 2021 Trivia Game Team";
+  document.querySelector("main").appendChild(footer);
 }
