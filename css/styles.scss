@@ -4,7 +4,7 @@ $top-right: blue;
 $bottom-left: orange;
 $bottom-right: green;
 $question-input-box: lavender;
-$button-background-color: lavender;
+$button-background-color: #00ccff;
 
 // HEADER
 
@@ -168,7 +168,7 @@ input[type="password"] {
 }
 
 // Add Question Page
-#grid-container {
+#grid-container-add-question {
   align-items: center;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -239,6 +239,37 @@ input[type="password"] {
   grid-column: 1/-1;
   margin-top: -1em;
   padding: 1em;
+}
+@media only screen and (max-width: 600px){
+  #grid-container-add-question{
+    display:block;
+    margin: 0 auto;
+    max-width: 50%;
+    text-align: center;
+  }
+  #answer-one{
+    margin-top: 2em;
+  }
+  #answer-two{
+    margin-top: 1em;
+  }
+  #answer-three{
+    margin-top: 1em;
+  }
+  #answer-four{
+    margin-top: 1em;
+  }
+  #topics-container{
+    margin-top: 1em;
+  }
+  #difficulty-container{
+    margin-top: 1em;
+  }
+  #add-question{
+    text-align: center;
+    margin-top: 1em;
+  }
+  
 }
 
 // Gameplay Page

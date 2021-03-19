@@ -145,7 +145,7 @@ fieldset {
 }
 
 button {
-  background-color: lavender;
+  background-color: #00ccff;
 }
 
 input[type=text] {
@@ -172,7 +172,7 @@ input[type="password"] {
   width: 7em;
 }
 
-#grid-container {
+#grid-container-add-question {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -262,6 +262,37 @@ input[type="password"] {
   grid-column: 1/-1;
   margin-top: -1em;
   padding: 1em;
+}
+
+@media only screen and (max-width: 600px) {
+  #grid-container-add-question {
+    display: block;
+    margin: 0 auto;
+    max-width: 50%;
+    text-align: center;
+  }
+  #answer-one {
+    margin-top: 2em;
+  }
+  #answer-two {
+    margin-top: 1em;
+  }
+  #answer-three {
+    margin-top: 1em;
+  }
+  #answer-four {
+    margin-top: 1em;
+  }
+  #topics-container {
+    margin-top: 1em;
+  }
+  #difficulty-container {
+    margin-top: 1em;
+  }
+  #add-question {
+    text-align: center;
+    margin-top: 1em;
+  }
 }
 
 #grid-container-gameplay {
