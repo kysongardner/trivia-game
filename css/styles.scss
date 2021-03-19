@@ -89,6 +89,17 @@ header {
   height: 70px;
 }
 
+// FOOTER
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
 // General
 @import url('https://fonts.googleapis.com/css2?family=Ranchers&display=swap');
 
