@@ -4,7 +4,7 @@ $top-right: blue;
 $bottom-left: orange;
 $bottom-right: green;
 $question-input-box: lavender;
-$button-background-color: lavender;
+$button-background-color: #00ccff;
 
 // HEADER
 
@@ -234,6 +234,7 @@ input[type="password"] {
     display:block;
     margin: 0 auto;
     max-width: 50%;
+    text-align: center;
   }
   #answer-one{
     margin-top: 2em;
@@ -245,6 +246,16 @@ input[type="password"] {
     margin-top: 1em;
   }
   #answer-four{
+    margin-top: 1em;
+  }
+  #topics-container{
+    margin-top: 1em;
+  }
+  #difficulty-container{
+    margin-top: 1em;
+  }
+  #add-question{
+    text-align: center;
     margin-top: 1em;
   }
   
