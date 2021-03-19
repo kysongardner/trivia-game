@@ -49,6 +49,7 @@ header .bar1,
 header .bar2,
 header .bar3 {
   margin-top: 6px;
+  border-radius: 100px;
 }
 
 .sidenav {
