@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="htmlHeight">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,25 +9,28 @@
     <script src="js/login.js" type="module"></script>
     <script src="js/headerFooter.js" type="module"></script>
 </head>
-<body>
+<body class="YPGradient">
     <header id="header"></header>
     <div class="spacer"></div>
     <main>
         <div class="form">
         <form action="/api/login" method="POST">
-            <fieldset id="login-fieldset">
-                <label id="login-label">LOGIN</label><br><br>
+            <fieldset id="login-fieldset" class="loginFieldset">
+                <legend id="login-label"><h1>LOGIN</h1></legend>
                 <label id="label" for="username">Username</label> <span class="required">*</span><br>
                 <input type="text" id="username" required><br><br>
                 
                 <label class="label" for="password">Password:</label> <span class="required">*</span><br>
                 <input type="password" id="password" required><br><br>
 
-                <input type="submit" value="Login" id="login-button"></input>
-                <label>or <a href="signUp.html">Sign Up</a></label>
+                <div class="loginButtonContainer">
+                    <input type="submit" value="Login" id="login-button"></input><br>
+                    <label>or <a href="signUp.html">Sign Up</a></label>
+                </div>
             </fieldset>
         </form>
     </div>
     </main>
+    <footer id="footer"></footer>
 </body>
 </html>

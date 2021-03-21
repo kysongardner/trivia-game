@@ -20,7 +20,7 @@ function openNav() {
 
 function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
-  document.getElementById("button").style.marginRight = "20px";
+  document.getElementById("button").style.marginRight = "50px";
   document.getElementById("bar1").style.backgroundColor = "black";
   document.getElementById("bar1").style.transform = "rotate(180deg)";
   document.getElementById("bar2").style.opacity = "1";
@@ -57,7 +57,6 @@ function getHeaderContents() {
   });
 }
 function addFooter() {
-  const footer = document.createElement("footer");
-  footer.innerHTML = "Copyright &copy; 2021 Trivia Game Team";
-  document.querySelector("main").appendChild(footer);
+  const footer = `Copyright &copy; 2021 Trivia Game Team`;
+  document.querySelector("footer").innerHTML = footer;
 }

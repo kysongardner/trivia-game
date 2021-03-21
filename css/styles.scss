@@ -6,6 +6,11 @@ $bottom-right: green;
 $question-input-box: lavender;
 $button-background-color: #00ccff;
 
+.htmlHeight, .YPGradient {
+  height: 100%;
+  background-image: linear-gradient(to bottom right, #FFBE0B, #FF006E);
+}
+
 // HEADER
 
 main {
@@ -15,6 +20,7 @@ main {
 .headerTitle {
   display: inline-block;
   margin: 0;
+  margin-left: 50px;
 }
 
 header {
@@ -33,7 +39,7 @@ header {
     right: 0;
     top: 0;
     z-index: 2;
-    margin-right: 20px;
+    margin-right: 50px;
     margin-top: 15px;
   }
   .bar1,
@@ -93,12 +99,16 @@ header {
 // FOOTER
 
 footer {
-  position: fixed;
-  left: 0;
+  position: absolute;
+  right: 0;
   bottom: 0;
-  width: 100%;
+  left: 0;
+  padding: 1rem;
   text-align: center;
-  margin-bottom: 1em;
+}
+
+.relativeFooter {
+  position: relative;
 }
 
 // General
@@ -108,9 +118,6 @@ footer {
   font-family: 'Ranchers', cursive;
   box-sizing: border-box;
 }
-// h1 {
-//   text-align: center;
-// }
 
 .required {
   color: red;
@@ -125,21 +132,53 @@ input[type=submit]{
   padding: 1em;
   background-color: #00ccff;
   font-size: x-large;
+  transition-duration: 0.4s;
+  &:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    background-color: #008cff;
+  }
+}
+
+.loginButtonContainer {
+  margin: 0;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  a {
+    text-decoration: none;
+    color: gray;
+  }
 }
 
 // Login Page
-@media only screen and(max-width: 500px){
-  #login-fieldset{
-    max-width: 5em;
-  }
-}
+
 .form> {
   display: block;
   text-align: center;
 }
+
 fieldset {
+  background-color: white;
+}
+
+.loginFieldset {
   width: 5em;
   margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #666;
+  position: relative;
+  height: 450px;
+}
+
+.signUpFieldset {
+  width: 5em;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #666;
+  position: relative;
+  height: 630px;
 }
 button {
   background-color: $button-background-color;
@@ -150,11 +189,13 @@ input[type=text] {
   padding: 1em;
   width: 30em;
   margin-bottom: 2em;
+  border-radius: 10px;
 }
 label,
 button {
   font-size: x-large;
   font: "Ranchers";
+
 }
 
 // Sign up Page
@@ -163,9 +204,32 @@ input[type="password"] {
   padding: 1em;
   width: 30em;
   margin-bottom: 2em;
+  border-radius: 10px;
 }
 #signup-button {
   width: 7em;
+  border-radius: 8px;
+  padding: 1em;
+  background-color: #00ccff;
+  font-size: x-large;
+  transition-duration: 0.4s;
+  &:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    background-color: #008cff;
+  }
+}
+
+.signUpButtonContainer {
+  margin: 0;
+  position: absolute;
+  top: 88%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  a {
+    text-decoration: none;
+    color: gray;
+  }
 }
 
 // Add Question Page
@@ -341,38 +405,6 @@ input[type="password"] {
   background-color: $bottom-right;
 }
 
-@media only screen and (max-width: 600px){
-  #grid-container-gameplay{
-    display:block;
-    margin: 0 auto;
-    max-width: 50%;
-  }
-  #answer-one-div {
-    width: 75%;
-    height: 75%;
-    margin-top: 2em;
-  }
-  
-  #answer-two-div {
-    width: 75%;
-    height: 75%;
-    margin-top: 1em;
-  }
-  
-  #answer-three-div {
-    width: 75%;
-    height: 75%;
-    margin-top: 1em;
-  }
-  
-  #answer-four-div {
-    width: 75%;
-    height: 75%;
-    margin-top: 1em;
-  }
-  
-  }
-
 // Start Game
 #start-game-header {
   background-color: lavender;
@@ -408,6 +440,7 @@ input[type="password"] {
   grid-column: 2/3;
   margin-top: 1em;
   padding: 1em;
+  border-radius: 8px;
 }
 
 // High Scores
@@ -427,9 +460,10 @@ table,
 th,
 tr,
 td {
-  border: 1px solid black;
+  border: 1px solid none;
   border-collapse: collapse;
   padding: 1em;
+  font-size: 25px;
 }
 th {
   background-color: #00ccff;
@@ -439,4 +473,42 @@ tr:nth-child(odd) {
 }
 tr:nth-child(even) {
   background-color: #ccf5ff;
+}
+
+@media only screen and (max-width: 600px){
+  #grid-container-gameplay{
+    display:block;
+    margin: 0 auto;
+    max-width: 50%;
+  }
+  #answer-one-div {
+    width: 75%;
+    height: 75%;
+    margin-top: 2em;
+  }
+  
+  #answer-two-div {
+    width: 75%;
+    height: 75%;
+    margin-top: 1em;
+  }
+  
+  #answer-three-div {
+    width: 75%;
+    height: 75%;
+    margin-top: 1em;
+  }
+  
+  #answer-four-div {
+    width: 75%;
+    height: 75%;
+    margin-top: 1em;
+  }
+  
+}
+
+@media only screen and(max-width: 500px){
+  #login-fieldset{
+    max-width: 5em;
+  }
 }

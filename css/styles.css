@@ -1,4 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Ranchers&display=swap");
+.htmlHeight, .YPGradient {
+  height: 100%;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#FFBE0B), to(#FF006E));
+  background-image: linear-gradient(to bottom right, #FFBE0B, #FF006E);
+}
+
 main {
   display: inline;
 }
@@ -6,6 +12,7 @@ main {
 .headerTitle {
   display: inline-block;
   margin: 0;
+  margin-left: 50px;
 }
 
 header {
@@ -41,7 +48,7 @@ header .button {
   right: 0;
   top: 0;
   z-index: 2;
-  margin-right: 20px;
+  margin-right: 50px;
   margin-top: 15px;
 }
 
@@ -100,12 +107,16 @@ header .bar3 {
 }
 
 footer {
-  position: fixed;
-  left: 0;
+  position: absolute;
+  right: 0;
   bottom: 0;
-  width: 100%;
+  left: 0;
+  padding: 1rem;
   text-align: center;
-  margin-bottom: 1em;
+}
+
+.relativeFooter {
+  position: relative;
 }
 
 * {
@@ -127,12 +138,28 @@ input[type=submit] {
   padding: 1em;
   background-color: #00ccff;
   font-size: x-large;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
 }
 
-@media only screen and (max-width: 500px) {
-  #login-fieldset {
-    max-width: 5em;
-  }
+input[type=submit]:hover {
+  -webkit-box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  background-color: #008cff;
+}
+
+.loginButtonContainer {
+  margin: 0;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.loginButtonContainer a {
+  text-decoration: none;
+  color: gray;
 }
 
 .form > {
@@ -141,8 +168,27 @@ input[type=submit] {
 }
 
 fieldset {
+  background-color: white;
+}
+
+.loginFieldset {
   width: 5em;
   margin: 0 auto;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 10px #666;
+          box-shadow: 0 0 10px #666;
+  position: relative;
+  height: 450px;
+}
+
+.signUpFieldset {
+  width: 5em;
+  margin: 0 auto;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 10px #666;
+          box-shadow: 0 0 10px #666;
+  position: relative;
+  height: 630px;
 }
 
 button {
@@ -154,6 +200,7 @@ input[type=text] {
   padding: 1em;
   width: 30em;
   margin-bottom: 2em;
+  border-radius: 10px;
 }
 
 label,
@@ -167,10 +214,37 @@ input[type="password"] {
   padding: 1em;
   width: 30em;
   margin-bottom: 2em;
+  border-radius: 10px;
 }
 
 #signup-button {
   width: 7em;
+  border-radius: 8px;
+  padding: 1em;
+  background-color: #00ccff;
+  font-size: x-large;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+}
+
+#signup-button:hover {
+  -webkit-box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  background-color: #008cff;
+}
+
+.signUpButtonContainer {
+  margin: 0;
+  position: absolute;
+  top: 88%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.signUpButtonContainer a {
+  text-decoration: none;
+  color: gray;
 }
 
 #grid-container-add-question {
@@ -374,34 +448,6 @@ input[type="password"] {
   background-color: green;
 }
 
-@media only screen and (max-width: 600px) {
-  #grid-container-gameplay {
-    display: block;
-    margin: 0 auto;
-    max-width: 50%;
-  }
-  #answer-one-div {
-    width: 75%;
-    height: 75%;
-    margin-top: 2em;
-  }
-  #answer-two-div {
-    width: 75%;
-    height: 75%;
-    margin-top: 1em;
-  }
-  #answer-three-div {
-    width: 75%;
-    height: 75%;
-    margin-top: 1em;
-  }
-  #answer-four-div {
-    width: 75%;
-    height: 75%;
-    margin-top: 1em;
-  }
-}
-
 #start-game-header {
   background-color: lavender;
   padding: 0.1em;
@@ -446,6 +492,7 @@ input[type="password"] {
   grid-column: 2/3;
   margin-top: 1em;
   padding: 1em;
+  border-radius: 8px;
 }
 
 #high-scores {
@@ -464,9 +511,10 @@ table,
 th,
 tr,
 td {
-  border: 1px solid black;
+  border: 1px solid none;
   border-collapse: collapse;
   padding: 1em;
+  font-size: 25px;
 }
 
 th {
@@ -479,5 +527,39 @@ tr:nth-child(odd) {
 
 tr:nth-child(even) {
   background-color: #ccf5ff;
+}
+
+@media only screen and (max-width: 600px) {
+  #grid-container-gameplay {
+    display: block;
+    margin: 0 auto;
+    max-width: 50%;
+  }
+  #answer-one-div {
+    width: 75%;
+    height: 75%;
+    margin-top: 2em;
+  }
+  #answer-two-div {
+    width: 75%;
+    height: 75%;
+    margin-top: 1em;
+  }
+  #answer-three-div {
+    width: 75%;
+    height: 75%;
+    margin-top: 1em;
+  }
+  #answer-four-div {
+    width: 75%;
+    height: 75%;
+    margin-top: 1em;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  #login-fieldset {
+    max-width: 5em;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
