@@ -6,27 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
     <title>Sign Up</title>
-    <script src="js/signUp.js"></script>
     <script src="js/headerFooter.js" type="module"></script>
+    <script src="js/signUp.js" type="module"></script>
 </head>
 <body class="YPGradient">
     <header id="header"></header>
     <div class="spacer"></div>
     <main>
-        <form action="/api/register" method="POST">
+        <form class="signup-form">
             <fieldset class="signUpFieldset">
                 <legend><h1>Sign Up</h1></legend>
                 <label for="email">Email:</label><span class="required">*</span>
-                <input type="text" id="email" placeholder="email" required>
+                <input type="text" id="email" placeholder="email@email.com" value="email@email.com" required>
 
                 <label for="username">Username:</label><span class="required">*</span>
-                <input type="text" id="username" placeholder="username" required>
+                <input type="text" id="username" placeholder="username" value="username" required>
                 
                 <label for="password">Password:</label><span class="required">*</span>
-                <input type="password" id="password" placeholder="password" required>
+                <input type="password" id="password" placeholder="confirmpassword" value="confirmpassword" required>
 
                 <label for="confirm-password">Confirm Password:</label><span class="required">*</span>
-                <input type="password" id="confirm-password" placeholder="confirm password" required>
+                <input type="password" id="confirm-password" placeholder="confirmpassword" value="confirmpassword" required>
                 
                 <div class="signUpButtonContainer">
                     <input type="submit" value="Sign Up" id="signup-button"></input><br>
