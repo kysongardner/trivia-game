@@ -17,15 +17,15 @@
         <form action="/api/login" method="POST">
             <fieldset id="login-fieldset" class="loginFieldset">
                 <legend id="login-label"><h1>LOGIN</h1></legend>
-                <label id="label" for="username">Username</label> <span class="required">*</span><br>
-                <input type="text" id="username" required><br><br>
+                <label id="label" for="username">Email</label> <span class="required">*</span><br>
+                <input type="text" id="username" name="email" placeholder="email" required><br><br>
                 
                 <label class="label" for="password">Password:</label> <span class="required">*</span><br>
-                <input type="password" id="password" required><br><br>
+                <input type="password" id="password" name="password" placeholder="password" required><br><br>
 
                 <div class="loginButtonContainer">
                     <input type="submit" value="Login" id="login-button"></input><br>
-                    <label>or <a href="signUp.html">Sign Up</a></label>
+                    <label id="login-button-label">or <a href="signUp.html">Sign Up</a></label>
                 </div>
             </fieldset>
         </form>

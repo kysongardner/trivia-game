@@ -134,7 +134,7 @@ footer {
 }
 
 input[type=submit] {
-  border-radius: 10%;
+  border-radius: 8px;
   padding: 1em;
   background-color: #00ccff;
   font-size: x-large;
@@ -169,6 +169,14 @@ input[type=submit]:hover {
 
 fieldset {
   background-color: white;
+}
+
+#login-button {
+  width: 7em;
+}
+
+#login-button-label, #login-button-label a {
+  text-align: center;
 }
 
 .loginFieldset {
