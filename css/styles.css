@@ -189,16 +189,6 @@ fieldset {
   height: 450px;
 }
 
-.signUpFieldset {
-  width: 5em;
-  margin: 0 auto;
-  border-radius: 10px;
-  -webkit-box-shadow: 0 0 10px #666;
-          box-shadow: 0 0 10px #666;
-  position: relative;
-  height: 630px;
-}
-
 button {
   background-color: #00ccff;
 }
@@ -253,6 +243,16 @@ input[type="password"] {
 .signUpButtonContainer a {
   text-decoration: none;
   color: #0A8754;
+}
+
+.signUpFieldset {
+  width: 5em;
+  margin: 0 auto;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 10px #666;
+          box-shadow: 0 0 10px #666;
+  position: relative;
+  height: 750px;
 }
 
 #grid-container-add-question {
