@@ -183,7 +183,6 @@ fieldset {
   position: relative;
 }
 
-
 .signUpFieldset {
   width: 5em;
   margin: 0 auto;
@@ -192,7 +191,6 @@ fieldset {
           box-shadow: 0 0 10px #666;
   position: relative;
 }
-
 
 button {
   background-color: #00ccff;
@@ -246,19 +244,14 @@ input[type="password"] {
   background-color: #008cff;
 }
 
-
-.signUpButtonContainer {
-  margin: 0;
-  position: absolute;
-  top: 88%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-}
-
-.signUpButtonContainer a {
-  text-decoration: none;
-  color: #0A8754;
+.signUpFieldset {
+  width: 5em;
+  margin: 0 auto;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 10px #666;
+          box-shadow: 0 0 10px #666;
+  position: relative;
+  height: 750px;
 }
 
 .signUpFieldset {

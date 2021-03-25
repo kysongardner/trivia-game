@@ -14,7 +14,7 @@ async function addQuestion(e){
     e.target
     // convert e.target to form data
     const formData = new FormData(e.target)
-    const login = {
+    const addQuestion = {
         method: 'POST',
         body: formData,
         headers: {'Content-Type': 'application/x-www-form-urlencoded'}
