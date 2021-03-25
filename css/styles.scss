@@ -172,7 +172,7 @@ fieldset {
   position: relative;
 }
 
-<<<<<<< HEAD
+
 .signUpFieldset {
   width: 5em;
   margin: 0 auto;
@@ -180,9 +180,7 @@ fieldset {
   box-shadow: 0 0 10px #666;
   position: relative;
 }
-=======
 
->>>>>>> 342e8924fc27d5dd135b46dcedafb8de544eaf60
 button {
   background-color: $button-background-color;
 }
@@ -231,6 +229,15 @@ input[type="password"] {
 }
 
 
+
+.signUpFieldset {
+  width: 5em;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #666;
+  position: relative;
+  height: 750px;
+}
 
 .signUpFieldset {
   width: 5em;
