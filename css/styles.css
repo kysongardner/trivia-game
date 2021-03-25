@@ -149,12 +149,7 @@ input[type=submit]:hover {
 }
 
 .loginButtonContainer {
-  margin: 0;
-  position: absolute;
-  top: 80%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 .loginButtonContainer a {
@@ -186,7 +181,6 @@ fieldset {
   -webkit-box-shadow: 0 0 10px #666;
           box-shadow: 0 0 10px #666;
   position: relative;
-  height: 450px;
 }
 
 .signUpFieldset {
@@ -196,7 +190,6 @@ fieldset {
   -webkit-box-shadow: 0 0 10px #666;
           box-shadow: 0 0 10px #666;
   position: relative;
-  height: 630px;
 }
 
 button {
@@ -225,6 +218,16 @@ input[type="password"] {
   border-radius: 10px;
 }
 
+.signUpButtonContainer {
+  text-align: center;
+}
+
+.signUpButtonContainer a {
+  text-align: center;
+  text-decoration: none;
+  color: #0A8754;
+}
+
 #signup-button {
   width: 7em;
   border-radius: 8px;
@@ -239,20 +242,6 @@ input[type="password"] {
   -webkit-box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
           box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
   background-color: #008cff;
-}
-
-.signUpButtonContainer {
-  margin: 0;
-  position: absolute;
-  top: 88%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-}
-
-.signUpButtonContainer a {
-  text-decoration: none;
-  color: #0A8754;
 }
 
 #grid-container-add-question {
