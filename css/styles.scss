@@ -6,9 +6,24 @@ $bottom-right: green;
 $question-input-box: lavender;
 $button-background-color: #00ccff;
 
-.htmlHeight, .YPGradient {
+html {
   height: 100%;
+}
+body {
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   background-image: linear-gradient(to bottom right, #FFBE0B, #FF006E);
+}
+
+.PGGradient {
+  background-image: linear-gradient(to bottom right, #a87be7, rgb(64, 204, 64));
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
 
 // HEADER
@@ -172,15 +187,6 @@ fieldset {
   position: relative;
 }
 
-
-.signUpFieldset {
-  width: 5em;
-  margin: 0 auto;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #666;
-  position: relative;
-}
-
 button {
   background-color: $button-background-color;
 }
@@ -226,17 +232,6 @@ input[type="password"] {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
     background-color: #008cff;
   }
-}
-
-
-
-.signUpFieldset {
-  width: 5em;
-  margin: 0 auto;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #666;
-  position: relative;
-  height: 750px;
 }
 
 .signUpFieldset {
@@ -324,6 +319,12 @@ input[type="password"] {
   grid-column: 1/-1;
   margin-top: -1em;
   padding: 1em;
+  transition-duration: 0.4s;
+  border-radius: 8px;
+  &:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    background-color: #008cff;
+  }
 }
 @media only screen and (max-width: 600px){
   #grid-container-add-question{
@@ -426,21 +427,38 @@ input[type="password"] {
 }
 
 // Start Game
+
+.startGameFieldset {
+  width: max-content;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
 #start-game-header {
-  background-color: lavender;
+  background-color: #00ccff;
   padding: 0.1em;
   text-align: center;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  width: 400px;
+  border-radius: 8px;
 }
 #start-game-topics-container {
-  background-color: lavender;
+  background-color: #00ccff;
   margin-top: 1em;
   padding: 0.5em;
   text-align: center;
   font-size: x-large;
+  margin: 0 auto;
+  margin-top: 15px;
+  width: 400px;
+  border-radius: 8px;
 }
 #start-game-fieldset{
   width: 17em;
   text-align: center;
+  margin: 0 auto;
+  border-radius: 8px;
 }
 .difficulty-label {
   max-width: 100%;
