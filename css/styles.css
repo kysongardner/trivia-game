@@ -246,6 +246,7 @@ input[type="password"] {
   background-color: #008cff;
 }
 
+
 .signUpButtonContainer {
   margin: 0;
   position: absolute;
@@ -282,6 +283,22 @@ input[type="password"] {
   justify-items: center;
   margin: 0 auto;
   max-width: 800px;
+}
+
+.question-input::-webkit-input-placeholder {
+  color: white;
+}
+
+.question-input:-ms-input-placeholder {
+  color: white;
+}
+
+.question-input::-ms-input-placeholder {
+  color: white;
+}
+
+.question-input::placeholder {
+  color: white;
 }
 
 #question-input {
