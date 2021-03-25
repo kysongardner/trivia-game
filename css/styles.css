@@ -149,12 +149,7 @@ input[type=submit]:hover {
 }
 
 .loginButtonContainer {
-  margin: 0;
-  position: absolute;
-  top: 80%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 .loginButtonContainer a {
@@ -186,8 +181,18 @@ fieldset {
   -webkit-box-shadow: 0 0 10px #666;
           box-shadow: 0 0 10px #666;
   position: relative;
-  height: 450px;
 }
+
+
+.signUpFieldset {
+  width: 5em;
+  margin: 0 auto;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 10px #666;
+          box-shadow: 0 0 10px #666;
+  position: relative;
+}
+
 
 button {
   background-color: #00ccff;
@@ -213,6 +218,16 @@ input[type="password"] {
   width: 30em;
   margin-bottom: 2em;
   border-radius: 10px;
+}
+
+.signUpButtonContainer {
+  text-align: center;
+}
+
+.signUpButtonContainer a {
+  text-align: center;
+  text-decoration: none;
+  color: #0A8754;
 }
 
 #signup-button {

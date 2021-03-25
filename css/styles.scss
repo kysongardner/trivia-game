@@ -140,12 +140,7 @@ input[type=submit]{
 }
 
 .loginButtonContainer {
-  margin: 0;
-  position: absolute;
-  top: 80%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+    text-align: center;
   a {
     text-decoration: none;
     color: #0A8754;
@@ -175,9 +170,16 @@ fieldset {
   border-radius: 10px;
   box-shadow: 0 0 10px #666;
   position: relative;
-  height: 450px;
 }
 
+
+.signUpFieldset {
+  width: 5em;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #666;
+  position: relative;
+}
 
 button {
   background-color: $button-background-color;
@@ -205,6 +207,14 @@ input[type="password"] {
   margin-bottom: 2em;
   border-radius: 10px;
 }
+.signUpButtonContainer {
+  text-align: center;
+  a {
+    text-align: center;
+    text-decoration: none;
+    color: #0A8754;
+  }
+}
 #signup-button {
   width: 7em;
   border-radius: 8px;
@@ -218,17 +228,15 @@ input[type="password"] {
   }
 }
 
-.signUpButtonContainer {
-  margin: 0;
-  position: absolute;
-  top: 88%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  a {
-    text-decoration: none;
-    color: #0A8754;
-  }
+
+
+.signUpFieldset {
+  width: 5em;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #666;
+  position: relative;
+  height: 750px;
 }
 
 .signUpFieldset {
