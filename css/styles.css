@@ -1,8 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Ranchers&display=swap");
-.htmlHeight, .YPGradient {
+html {
   height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   background-image: -webkit-gradient(linear, left top, right bottom, from(#FFBE0B), to(#FF006E));
   background-image: linear-gradient(to bottom right, #FFBE0B, #FF006E);
+}
+
+.PGGradient {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#a87be7), to(#40cc40));
+  background-image: linear-gradient(to bottom right, #a87be7, #40cc40);
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
 
 main {
@@ -370,6 +387,15 @@ input[type="password"] {
   grid-column: 1/-1;
   margin-top: -1em;
   padding: 1em;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+  border-radius: 8px;
+}
+
+#add-question:hover {
+  -webkit-box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  background-color: #008cff;
 }
 
 @media only screen and (max-width: 600px) {
@@ -481,23 +507,41 @@ input[type="password"] {
   background-color: green;
 }
 
+.startGameFieldset {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
 #start-game-header {
-  background-color: lavender;
+  background-color: #00ccff;
   padding: 0.1em;
   text-align: center;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  width: 400px;
+  border-radius: 8px;
 }
 
 #start-game-topics-container {
-  background-color: lavender;
+  background-color: #00ccff;
   margin-top: 1em;
   padding: 0.5em;
   text-align: center;
   font-size: x-large;
+  margin: 0 auto;
+  margin-top: 15px;
+  width: 400px;
+  border-radius: 8px;
 }
 
 #start-game-fieldset {
   width: 17em;
   text-align: center;
+  margin: 0 auto;
+  border-radius: 8px;
 }
 
 .difficulty-label {
