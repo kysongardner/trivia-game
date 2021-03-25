@@ -7,9 +7,9 @@ function convertToJson(res){
     }
 }
 
-document.querySelector(".login-form").addEventListener("submit", login)
+document.querySelector(".add-question-form").addEventListener("submit", addQuestion)
 
-async function login(e){
+async function addQuestion(e){
     e.preventDefault()
     e.target
     // convert e.target to form data
@@ -19,12 +19,12 @@ async function login(e){
         body: formData,
         headers: {'Content-Type': 'application/x-www-form-urlencoded'}
     }
-    const response = await fetch("https://trivia-api-cse-341.herokuapp.com/api/login", login).then(convertToJson)
+    const response = await fetch("https://trivia-api-cse-341.herokuapp.com/api/addQuestion", addQuestion).then(convertToJson)
     console.log(response)
     if (response.isAuth){
         return response
     }else{
-        alert("Email not found. Try again or create an account.")
+        alert("Error Adding Question! Please Try Again!")
     }
     
     

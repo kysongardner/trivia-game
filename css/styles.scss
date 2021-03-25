@@ -250,6 +250,10 @@ input[type="password"] {
   max-width: 800px;
 }
 
+.question-input::placeholder{
+  color: white;
+}
+
 #question-input {
   grid-column: 1/-1;
   width: 100%;

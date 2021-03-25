@@ -14,17 +14,17 @@
     <header id="header"></header>
     <div class="spacer"></div>
     <main>
-        <form>
+        <form class="add-question-form">
             <div id="grid-container-add-question">
-                <input type="text" id="question-input" placeholder="QUESTION HERE"><br><br>
+                <input type="text" id="question-input" placeholder="QUESTION HERE" onfocus="this.placeholder = ''" name="question" ><br><br>
 
-                <input id="answer-one" class="question-input" value="Answer 1" required></input>
+                <input id="answer-one" class="question-input" placeholder="Answer 1" onfocus="this.placeholder = ''" name="answerone" required></input>
 
-                <input id="answer-two" class="question-input" value="Answer 2" required></input>
+                <input id="answer-two" class="question-input" placeholder="Answer 2" onfocus="this.placeholder = ''" name="answertwo" required></input>
 
-                <input id="answer-three" class="question-input" value="Answer 3" required></input>
+                <input id="answer-three" class="question-input" placeholder="Answer 3" onfocus="this.placeholder = ''" name="answerthree" required></input>
 
-                <input id="answer-four" class="question-input" value="Answer 4" required></input><br><br>
+                <input id="answer-four" class="question-input" placeholder="Answer 4" onfocus="this.placeholder = ''" name="answerfour" required></input><br><br>
 
                 <div id="topics-container">
                     <label id="topics-label" for="category">Category:</label>
