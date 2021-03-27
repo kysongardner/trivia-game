@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Ranchers&display=swap");
-.htmlHeight, .YPGradient {
+.htmlHeight,
+.YPGradient {
   height: 100%;
   background-image: -webkit-gradient(linear, left top, right bottom, from(#FFBE0B), to(#FF006E));
   background-image: linear-gradient(to bottom right, #FFBE0B, #FF006E);
@@ -170,7 +171,8 @@ fieldset {
   width: 7em;
 }
 
-#login-button-label, #login-button-label a {
+#login-button-label,
+#login-button-label a {
   text-align: center;
 }
 
@@ -418,11 +420,30 @@ input[type="password"] {
 }
 
 #points-div {
-  grid-column: 1/-1;
+  margin-top: -0.5em;
+  -ms-grid-column: 1;
+  grid-column: 1/1;
+  font-size: x-large;
+}
+
+#question-number-div {
+  margin-top: -0.5em;
+  -ms-grid-column: 2;
+  grid-column: 2/2;
+  font-size: x-large;
+}
+
+#points {
+  padding-left: 0.2em;
+}
+
+#question-number {
+  padding-left: 0.2em;
 }
 
 #gameplay-question-container {
   grid-column: 1/-1;
+  font-size: 2em;
 }
 
 #answer-one-div {
@@ -479,6 +500,60 @@ input[type="password"] {
   font-size: x-large;
   border: 2px solid black;
   background-color: green;
+}
+
+@media only screen and (max-width: 600px) {
+  #grid-container-gameplay {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    margin: 0 auto;
+    max-width: 800px;
+  }
+  #points-div {
+    margin-top: 0.5em;
+  }
+  #question-number-div {
+    margin-top: 0.5em;
+  }
+  #answer-one-div {
+    color: white;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    padding-top: 1.5em;
+    width: 5em;
+    height: 5em;
+  }
+  #answer-two-div {
+    color: white;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3;
+    padding-top: 1.5em;
+    width: 5em;
+    height: 5em;
+  }
+  #answer-three-div {
+    color: white;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    padding-top: 1.5em;
+    width: 5em;
+    height: 5em;
+  }
+  #answer-four-div {
+    color: white;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3;
+    padding-top: 1.5em;
+    width: 5em;
+    height: 5em;
+  }
 }
 
 #start-game-header {
@@ -561,34 +636,6 @@ tr:nth-child(odd) {
 
 tr:nth-child(even) {
   background-color: #ccf5ff;
-}
-
-@media only screen and (max-width: 600px) {
-  #grid-container-gameplay {
-    display: block;
-    margin: 0 auto;
-    max-width: 50%;
-  }
-  #answer-one-div {
-    width: 75%;
-    height: 75%;
-    margin-top: 2em;
-  }
-  #answer-two-div {
-    width: 75%;
-    height: 75%;
-    margin-top: 1em;
-  }
-  #answer-three-div {
-    width: 75%;
-    height: 75%;
-    margin-top: 1em;
-  }
-  #answer-four-div {
-    width: 75%;
-    height: 75%;
-    margin-top: 1em;
-  }
 }
 
 @media only screen and (max-width: 500px) {

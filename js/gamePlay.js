@@ -1,13 +1,13 @@
 class Game {
     constructor() {
-        this.game = "";// set this equal to the game object
-        this.points = document.getElementById("points").innerHTML
-        this.questionNumber = document.querySelector("#question-number").value
-        this.question = document.querySelector("#gameplay-question").value
-        this.answerOne = document.querySelector("#answer-one-div").value
-        this.answerTwo = document.querySelector("#answer-two-div").value
-        this.answerThree = document.querySelector("#answer-three-div").value
-        this.answerFour = document.querySelector("#answer-four-div").value
+        this.game = ""// set this equal to the game object
+        this.points = document.getElementById("points")
+        this.questionNumber = document.querySelector("#question-number")
+        this.question = document.querySelector("#gameplay-question")
+        this.answerOne = document.querySelector("#answer-one-div")
+        this.answerTwo = document.querySelector("#answer-two-div")
+        this.answerThree = document.querySelector("#answer-three-div")
+        this.answerFour = document.querySelector("#answer-four-div")
         this.correctAnswer = 0 // This would point to the correct answer in the json object
         this.answerChosen = ""
         this.category = document.querySelector("#start-game-topics")
