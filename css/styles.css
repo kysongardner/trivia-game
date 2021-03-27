@@ -1,8 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Ranchers&display=swap");
-.htmlHeight,
-.YPGradient {
-=======
-html {
+.htmlHeight html,
+.YPGradient html {
   height: 100%;
 }
 
@@ -204,15 +202,6 @@ fieldset {
   position: relative;
 }
 
-.signUpFieldset {
-  width: 5em;
-  margin: 0 auto;
-  border-radius: 10px;
-  -webkit-box-shadow: 0 0 10px #666;
-          box-shadow: 0 0 10px #666;
-  position: relative;
-}
-
 button {
   background-color: #00ccff;
 }
@@ -263,16 +252,6 @@ input[type="password"] {
   -webkit-box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
           box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
   background-color: #008cff;
-}
-
-.signUpFieldset {
-  width: 5em;
-  margin: 0 auto;
-  border-radius: 10px;
-  -webkit-box-shadow: 0 0 10px #666;
-          box-shadow: 0 0 10px #666;
-  position: relative;
-  height: 750px;
 }
 
 .signUpFieldset {
@@ -582,6 +561,8 @@ input[type="password"] {
     width: 5em;
     height: 5em;
   }
+}
+
 .startGameFieldset {
   width: -webkit-max-content;
   width: -moz-max-content;
@@ -615,10 +596,8 @@ input[type="password"] {
 #start-game-fieldset {
   width: 17em;
   text-align: center;
-
   margin: 0 auto;
   border-radius: 8px;
-
 }
 
 .difficulty-label {

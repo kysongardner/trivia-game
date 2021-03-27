@@ -8,8 +8,10 @@ $button-background-color: #00ccff;
 
 .htmlHeight,
 .YPGradient {
+
 html {
   height: 100%;
+}
 }
 body {
   height: 100%;
@@ -432,10 +434,6 @@ input[type="password"] {
   font-size: 2em;
 }
 
-#gameplay-question {
-  // you would generate the actual question here
-}
-
 #answer-one-div {
   color: white;
   grid-column: 1/2;
@@ -566,7 +564,6 @@ input[type="password"] {
 #start-game-fieldset {
   width: 17em;
   text-align: center;
-
   margin: 0 auto;
   border-radius: 8px;
 }
