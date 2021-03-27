@@ -498,6 +498,7 @@ input[type="password"] {
 #start-game-fieldset {
   width: 17em;
   text-align: center;
+  margin: auto;
 }
 
 .difficulty-label {
