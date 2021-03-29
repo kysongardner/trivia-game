@@ -46,9 +46,10 @@ function getHeaderContents() {
     <a href="highScores.html">High Scores</a>
     <a href="addQuestion.html">Add Question</a>
     <a href="gamePlay.html">Game Play</a>
+    <a href="startGame.html">Start Game</a>
     <a href="login.html">Login</a>
     <a href="signUp.html">Sign Up</a>
-    <a href="startGame.html">Start Game</a>
+    <a href="profile.html">Profile</a>
   </div>
    `;
   document.querySelector("header").innerHTML = markup;

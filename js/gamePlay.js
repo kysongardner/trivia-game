@@ -1,13 +1,18 @@
+// get game
+// get question
+// 
+
+
 class Game {
     constructor() {
-        this.game = ""// set this equal to the game object
-        this.points = document.getElementById("points")
-        this.questionNumber = document.querySelector("#question-number")
-        this.question = document.querySelector("#gameplay-question")
-        this.answerOne = document.querySelector("#answer-one-div")
-        this.answerTwo = document.querySelector("#answer-two-div")
-        this.answerThree = document.querySelector("#answer-three-div")
-        this.answerFour = document.querySelector("#answer-four-div")
+        this.game = "" // set this equal to the game object
+        this.points = 0
+        this.questionNumber = 0
+        this.question = ""
+        this.answerOne = ""
+        this.answerTwo = ""
+        this.answerThree = ""
+        this.answerFour = ""
         this.correctAnswer = 0 // This would point to the correct answer in the json object
         this.answerChosen = ""
         this.category = document.querySelector("#start-game-topics")
@@ -41,7 +46,7 @@ class Game {
     }
     async sendStartGameData() {
         // send this.topic and this.category
-        fetch("https://trivia-api-cse-341.herokuapp.com/api/startGame", {
+        fetch("https://trivia-api-cse-341.herokuapp.com/api/getGame", {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
@@ -53,47 +58,69 @@ class Game {
             })
             .then((response) => {
                 this.getGame(response)
-            })
+            }).then(getGame(gameObject))
     }
     async getGame(gameObject) {
-        console.log(gameObject)
+        // Get the game and then send the individual question 
+        // object to the get question function
+        for (const question in gameObject){
+            this.questionNumber = gameObject.Question.Number
+            this.getQuestion(this.questionNumber)
+        }
+        
         // set different properties to the gameObject properties.
     }
 
-    async getQuestion() {
-        // get game object
-        // load first question
-        // set an incrementor to increment to next question
-        this.questionNumber = this.game.question2
-        this.question = this.game.question2.question
+    async getQuestion(gameObject) {
+        this.questionNumber = gameObject.question.number
+        this.question = gameObject.questionNumber.question
+        this.answerOne = gameObject.question.answerOne
+        this.answerTwo = gameObject.question.answerTwo
+        this.answerThree = gameObject.question.answerThree
+        this.answerFour = gameObject.question.answerFour
+
+        document.querySelector("#question-number").innerHTML = this.questionNumber + "/10"
+
+        document.querySelector("#answer-one-div").innerHTML = this.answerOne
+        document.querySelector("#answer-two-div").innerHTML = this.answerTwo
+        document.querySelector("#answer-three-div").innerHTML = this.answerThree
+        document.querySelector("#answer-four-div").innerHTML = this.answerFour
+
+
     }
     async submitAnswer(answer) {
         console.log(answer.target.id)
         this.answerChosen = answer.target.id
+        let correctAnswer = false
         if (answer.target.id == "answer-one-div") {
-            this.answerChosen = 1
+            if (this.answerOne.isCorrect) {
+                correctAnswer = true
+            }
         } else if (answer.target.id == "answer-two-div") {
-            this.answerChosen = 2
+            if (this.answerTwo.isCorrect) {
+                correctAnswer = true
+            }
         } else if (answer.target.id == "answer-three-div") {
-            this.answerChosen = 3
+            if (this.answerThree.isCorrect) {
+                correctAnswer = true
+            }
         } else if (answer.target.id == "answer-four-div") {
-            this.answerChosen = 4
+            if (this.answerFour.isCorrect) {
+                correctAnswer = true
+            }
         }
-        // json game object answer 1 = this.answer1
-        // json game object answer 2 = this.answer2
-        // json game object answer 3 = this.answer3
-        // json game object answer 4 = this.answer4
-        // SEND ALERT SO IT STOPS THE GAME UNTIL THEY CLICK CONTINUE
-        // if this.answerchosen == gameobject.correctAnswer == true
-        // Add 100 points & call the update points function
-        // else
-        // increment the questionnumber and then call get question again.
+        if (correctAnswer) {
+            this.points += 100
+        }
+        this.updateStatistics()
+        alert("Are you ready for the next question?")
+        // If question is not above 10 then 
+        // getQuestion()
     }
-    async updatePoints(){
-        this.points += 100
-    }
-    async updateQuestionNumber(){
+    async updateStatistics() {
         this.questionNumber = gameobjectquestionnumber + "/10"
+        document.querySelector("#question-number").innerHTML = this.questionNumber
+        document.querySelector("#points").innerHTML = this.points
     }
 
 
@@ -117,14 +144,28 @@ class Game {
     }
 }
 
-let game = new Game()
-document.querySelector("#start-game-button").addEventListener("submit", game.getDifficulty)
-document.querySelector("#start-game-button").addEventListener("submit", game.getCategory)
-game.sendStartGameData()
-game.getGame()
+function gameLoop() {
+    console.log("This is the game loop!")
+    // get game
+    // get question
+    // wait for answer
+    // update statistics
+    // wait for them to be ready
+    // get question
+    // play until question is the 10th question
+    // call submitScore function & end game
+    // Send them to their profile page
+
+    // let game = new Game()
+    // document.querySelector("#start-game-button").addEventListener("submit", game.getDifficulty)
+    // document.querySelector("#start-game-button").addEventListener("submit", game.getCategory)
+    // game.sendStartGameData()
+    // game.getGame()
 
 
-// let answerOne = document.querySelector("#answer-one-div").addEventListener("click", game.submitAnswer)
-// let answerTwo = document.querySelector("#answer-two-div").addEventListener("click", game.submitAnswer)
-// let answerThree = document.querySelector("#answer-three-div").addEventListener("click", game.submitAnswer)
-// let answerFour = document.querySelector("#answer-four-div").addEventListener("click", game.submitAnswer)
+    // document.querySelector("#answer-one-div").addEventListener("click", game.submitAnswer)
+    // document.querySelector("#answer-two-div").addEventListener("click", game.submitAnswer)
+    // document.querySelector("#answer-three-div").addEventListener("click", game.submitAnswer)
+    // document.querySelector("#answer-four-div").addEventListener("click", game.submitAnswer)
+}
+gameLoop()
