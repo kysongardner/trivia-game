@@ -19,7 +19,7 @@ async function addQuestion(e){
         body: formData,
         headers: {'Content-Type': 'application/x-www-form-urlencoded'}
     }
-    const response = await fetch("https://trivia-api-cse-341.herokuapp.com/api/submit-Question", addQuestion).then(convertToJson)
+    const response = await fetch("https://trivia-api-cse-341.herokuapp.com/api/submit-question", addQuestion).then(convertToJson)
     console.log(response)
     if (response.isAuth){
         return response
