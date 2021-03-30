@@ -14,7 +14,7 @@ document.querySelector(".signup-form").addEventListener("submit", signUp)
 
 async function signUp(e) {
     e.preventDefault()
-
+    // const formData = new FormData(e.target)
     const firstName = document.getElementById("firstname").value
     const lastName = document.getElementById("lastname").value
     const email = document.getElementById("email").value
@@ -35,12 +35,13 @@ async function signUp(e) {
         password : password,
         confirmPassword : confirmPassword
     }
-    console.log(formData)
+    // const formValues = formData.entries()
+    // console.log([...formData])
     const signUp = {
         method: 'POST',
-        body: formData,
+        body: JSON.stringify(formData),
         headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
+            'Content-Type': 'application/json'
         }
     }
     const response = await fetch("http://trivia-api-cse-341.herokuapp.com/api/register", signUp).then(convertToJson)

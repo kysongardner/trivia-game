@@ -13,6 +13,7 @@ async function login(e){
     e.preventDefault()
     e.target
 
+
     const email = document.getElementById("username").value
     const password = document.getElementById("login-password").value
 
@@ -26,8 +27,8 @@ async function login(e){
 
     const login = {
         method: 'POST',
-        body: formData,
-        headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+        body: JSON.stringify(formData),
+        headers: {'Content-Type': 'application/json'}
     }
     const response = await fetch("http://trivia-api-cse-341.herokuapp.com/api/login", login).then(convertToJson)
     console.log(response)
