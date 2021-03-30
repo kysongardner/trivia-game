@@ -45,16 +45,14 @@ class Game {
         console.log(this.category)
     }
     async sendStartGameData() {
-        // send this.topic and this.category
-        fetch("https://trivia-api-cse-341.herokuapp.com/api/getGame", {
-                method: "POST",
+        
+
+        fetch(`https://trivia-api-cse-341.herokuapp.com/api/getGame${this.difficulty}&${this.category}`, {
+                method: "GET",
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
                 },
-                body: JSON.stringify({
-                    difficulty: this.difficulty,
-                    category: this.category
-                })
+                body: formData                
             })
             .then((response) => {
                 this.getGame(response)
@@ -156,16 +154,16 @@ function gameLoop() {
     // call submitScore function & end game
     // Send them to their profile page
 
-    // let game = new Game()
-    // document.querySelector("#start-game-button").addEventListener("submit", game.getDifficulty)
-    // document.querySelector("#start-game-button").addEventListener("submit", game.getCategory)
-    // game.sendStartGameData()
-    // game.getGame()
+    let game = new Game()
+    document.querySelector("#start-game-button").addEventListener("submit", game.getDifficulty)
+    document.querySelector("#start-game-button").addEventListener("submit", game.getCategory)
+    game.sendStartGameData()
+    game.getGame()
 
 
-    // document.querySelector("#answer-one-div").addEventListener("click", game.submitAnswer)
-    // document.querySelector("#answer-two-div").addEventListener("click", game.submitAnswer)
-    // document.querySelector("#answer-three-div").addEventListener("click", game.submitAnswer)
-    // document.querySelector("#answer-four-div").addEventListener("click", game.submitAnswer)
+    document.querySelector("#answer-one-div").addEventListener("click", game.submitAnswer)
+    document.querySelector("#answer-two-div").addEventListener("click", game.submitAnswer)
+    document.querySelector("#answer-three-div").addEventListener("click", game.submitAnswer)
+    document.querySelector("#answer-four-div").addEventListener("click", game.submitAnswer)
 }
 gameLoop()
