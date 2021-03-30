@@ -15,8 +15,10 @@ document.querySelector(".add-question-form").addEventListener("submit", addQuest
 async function addQuestion(e) {
     e.preventDefault()
     e.target
-    // convert e.target to form data
-    const formData = new FormData(e.target)
+
+    
+
+    const formData = {}
     const addQuestion = {
         method: 'POST',
         body: JSON.stringify(formData),
