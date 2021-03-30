@@ -15,8 +15,6 @@ class Game {
         this.answerFour = ""
         this.correctAnswer = 0 // This would point to the correct answer in the json object
         this.answerChosen = ""
-        this.category = document.querySelector("#start-game-topics")
-        this.difficulty = ""
     }
     convertToJson(res) {
         if (res.ok) {
@@ -29,30 +27,16 @@ class Game {
             }
         }
     }
-    async getDifficulty() {
-        let radios = document.getElementsByName("difficulty")
-        for (let i = 0, length = radios.length; i < length; i++) {
-            if (radios[i].checked) {
-                this.category = radios[i].checked
-                console.log(radios[i].value)
-                break
-            }
-        }
-    }
-    async getCategory() {
-        let theCategories = document.querySelector("#start-game-topics")
-        this.category = theCategories.value
-        console.log(this.category)
-    }
     async sendStartGameData() {
-        
+        let url_url = window.location.href
+        let url = new URL(url_url)
+        let difficulty = url.searchParams.get("difficulty")
+        let category = url.searchParams.get("category")
 
-        fetch(`https://trivia-api-cse-341.herokuapp.com/api/getGame${this.difficulty}&${this.category}`, {
+        console.log(difficulty)
+        console.log(category)
+        fetch(`https://trivia-api-cse-341.herokuapp.com/api/getGame?difficulty=${difficulty}&category=${category}`, {
                 method: "GET",
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                },
-                body: formData                
             })
             .then((response) => {
                 this.getGame(response)
@@ -61,11 +45,11 @@ class Game {
     async getGame(gameObject) {
         // Get the game and then send the individual question 
         // object to the get question function
-        for (const question in gameObject){
+        for (const question in gameObject) {
             this.questionNumber = gameObject.Question.Number
             this.getQuestion(this.questionNumber)
         }
-        
+
         // set different properties to the gameObject properties.
     }
 
@@ -78,7 +62,6 @@ class Game {
         this.answerFour = gameObject.question.answerFour
 
         document.querySelector("#question-number").innerHTML = this.questionNumber + "/10"
-
         document.querySelector("#answer-one-div").innerHTML = this.answerOne
         document.querySelector("#answer-two-div").innerHTML = this.answerTwo
         document.querySelector("#answer-three-div").innerHTML = this.answerThree
@@ -155,8 +138,6 @@ function gameLoop() {
     // Send them to their profile page
 
     let game = new Game()
-    document.querySelector("#start-game-button").addEventListener("submit", game.getDifficulty)
-    document.querySelector("#start-game-button").addEventListener("submit", game.getCategory)
     game.sendStartGameData()
     game.getGame()
 

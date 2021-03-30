@@ -14,9 +14,12 @@
 <body class="YPGradient">
     <header id="header"></header>
     <div class="spacer"></div>
-        <main>
+    <main>
+        <form action="gamePlay.html" method="GET">
             <fieldset class="startGameFieldset">
-                <legend><h1>Start Game</h1></legend>
+                <legend>
+                    <h1>Start Game</h1>
+                </legend>
                 <h1 id="start-game-header">Choose Difficulty:</h1>
                 <fieldset id="start-game-fieldset">
                     <input type="radio" id="easy" name="difficulty" value="Easy">
@@ -29,26 +32,26 @@
                     <label class="difficulty-label" for="hard">Hard</label>
                 </fieldset>
 
-            <div id="start-game-topics-container">
-                <label id="start-game-topics-label" for="category">Category:</label>
-                <select name="category" id="start-game-topics">
-                    <option value="Select One">Select One</option>
-                    <option value="Random">Random</option>
-                    <option value="Sports">Sports</option>
-                    <option value="Movies">Movies</option>
-                    <option value="Food">Food</option>
-                    <option value="People">People</option>
-                    <option value="History">History</option>
-                    <option value="Science">Science</option>
-                    <option value="Technology">Technology</option>
-                </select>
-            </div>
-            <div id="start-game-button-container">
-                <input type="submit" value="Start Game" id="start-game-button" a href="gamePlay.html"></input>
-            </div>
-
-        </main>
-        <footer id="footer"></footer>
+                <div id="start-game-topics-container">
+                    <label id="start-game-topics-label" for="category">Category:</label>
+                    <select name="category" id="start-game-topics">
+                        <option value="Select One">Select One</option>
+                        <option value="Random">Random</option>
+                        <option value="Sports">Sports</option>
+                        <option value="Movies">Movies</option>
+                        <option value="Food">Food</option>
+                        <option value="People">People</option>
+                        <option value="History">History</option>
+                        <option value="Science">Science</option>
+                        <option value="Technology">Technology</option>
+                    </select>
+                </div>
+                <div id="start-game-button-container">
+                    <input type="submit" value="Start Game" id="start-game-button"></input>
+                </div>
+        </form>
+    </main>
+    <footer id="footer"></footer>
 </body>
 
 </html>

@@ -19,9 +19,9 @@ async function addQuestion(e) {
     const formData = new FormData(e.target)
     const addQuestion = {
         method: 'POST',
-        body: formData,
+        body: JSON.stringify(formData),
         headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
+            'Content-Type': 'application/json'
         }
     }
     const response = await fetch("https://trivia-api-cse-341.herokuapp.com/api/submit-question", addQuestion).then(convertToJson)
