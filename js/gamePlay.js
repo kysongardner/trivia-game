@@ -1,7 +1,3 @@
-// get game
-// get question
-// 
-
 
 class Game {
     constructor() {

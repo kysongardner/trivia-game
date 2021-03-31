@@ -35,7 +35,7 @@ async function login(e){
     if (response.isAuth){
         return response
     }else{
-        alert("Email not found. Try again or create an account.")
+        alert(response.message)
     }
     
     

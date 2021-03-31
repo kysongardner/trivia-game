@@ -357,6 +357,10 @@ input[type="password"] {
     background-color: #008cff;
   }
 }
+#correct-answer-container{
+  grid-column: 1/-1;
+  margin-bottom: 2em;
+}
 
 @media only screen and (max-width: 600px) {
   #grid-container-add-question {
@@ -388,6 +392,12 @@ input[type="password"] {
 
   #difficulty-container {
     margin-top: 1em;
+  }
+
+  #correct-answer-container{
+    grid-column: 1/-1;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
   }
 
   #add-question {

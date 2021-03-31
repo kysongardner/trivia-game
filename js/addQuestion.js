@@ -94,3 +94,13 @@ async function addQuestion(e) {
     const response = await fetch("https://trivia-api-cse-341.herokuapp.com/api/submit-question", addQuestion).then(convertToJson)
     console.log(response)
 }
+
+function getAllQuestions(){
+    fetch("https://trivia-api-cse-341.herokuapp.com/api/get-all-questions")
+    .then((response) => {
+        response.json()
+        console.log(response)
+    })
+    
+}
+getAllQuestions()
