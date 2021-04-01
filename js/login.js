@@ -2,7 +2,7 @@ function convertToJson(res){
     if (res.ok){
         return res.json()
     } else{
-        let jsonReponse = res.json()
+        let jsonResponse = res.json()
         throw { name: "servicesError", message: jsonResponse}
     }
 }
@@ -30,7 +30,7 @@ async function login(e){
         body: JSON.stringify(formData),
         headers: {'Content-Type': 'application/json'}
     }
-    const response = await fetch("http://trivia-api-cse-341.herokuapp.com/api/login", login).then(convertToJson)
+    const response = await fetch("https://trivia-api-cse-341.herokuapp.com/api/login", login).then(convertToJson)
     console.log(response)
     if (response.isAuth){
         return response

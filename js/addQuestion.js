@@ -45,16 +45,16 @@ async function addQuestion(e) {
     let fourthAnswer = false
 
     // Setting the correct answer attribute to the right answer
-    if (correctAnswer == 1) {
+    if (correctAnswer == 0) {
         firstAnswer = true
     }
-    if (correctAnswer == 2) {
+    if (correctAnswer == 1) {
         secondAnswer = true
     }
-    if (correctAnswer == 3) {
+    if (correctAnswer == 2) {
         thirdAnswer = true
     }
-    if (correctAnswer == 4) {
+    if (correctAnswer == 3) {
         fourthAnswer = true
     }
 
@@ -79,7 +79,7 @@ async function addQuestion(e) {
 
         ],
         category: category,
-        difficulty: `'${difficulty}'`
+        difficulty: `${difficulty}`
     }
 
     console.log(formData)
@@ -91,16 +91,19 @@ async function addQuestion(e) {
             'Content-Type': 'application/json'
         }
     }
-    const response = await fetch("https://trivia-api-cse-341.herokuapp.com/api/submit-question", addQuestion).then(convertToJson)
+    const response = await fetch("https://trivia-api-cse-341.herokuapp.com/api/submit-question", addQuestion)
+        .then((result) => {
+            // console.log(result)
+            //  return convertToJson(result)
+            return result.json()
+        })
     console.log(response)
+
 }
 
-function getAllQuestions(){
-    fetch("https://trivia-api-cse-341.herokuapp.com/api/get-all-questions")
-    .then((response) => {
-        response.json()
-        console.log(response)
-    })
-    
+function getAllQuestions() {
+    const response = fetch("https://trivia-api-cse-341.herokuapp.com/api/get-all-questions").then(convertToJson)
+    console.log(response)
+
 }
 getAllQuestions()
