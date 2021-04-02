@@ -1,8 +1,3 @@
-// get game
-// get question
-// 
-
-
 class Game {
     constructor() {
         this.game = "" // set this equal to the game object
@@ -39,27 +34,21 @@ class Game {
                 method: "GET",
             })
             .then((response) => {
-                this.getGame(response)
-            }).then(getGame(gameObject))
-    }
-    async getGame(gameObject) {
-        // Get the game and then send the individual question 
-        // object to the get question function
-        for (const question in gameObject) {
-            this.questionNumber = gameObject.Question.Number
-            this.getQuestion(this.questionNumber)
-        }
-
-        // set different properties to the gameObject properties.
+                response.json()
+                console.log(response)
+                this.gameObject = response
+            })
     }
 
     async getQuestion(gameObject) {
-        this.questionNumber = gameObject.question.number
-        this.question = gameObject.questionNumber.question
-        this.answerOne = gameObject.question.answerOne
-        this.answerTwo = gameObject.question.answerTwo
-        this.answerThree = gameObject.question.answerThree
-        this.answerFour = gameObject.question.answerFour
+
+        // if this.question-number > 10 { then call this.submitScore & redirect them to the profile game page}
+        // this.questionNumber = gameObject.question.number
+        // this.question = gameObject.questionNumber.question
+        // this.answerOne = gameObject.question.answerOne
+        // this.answerTwo = gameObject.question.answerTwo
+        // this.answerThree = gameObject.question.answerThree
+        // this.answerFour = gameObject.question.answerFour
 
         document.querySelector("#question-number").innerHTML = this.questionNumber + "/10"
         document.querySelector("#answer-one-div").innerHTML = this.answerOne
@@ -95,8 +84,7 @@ class Game {
         }
         this.updateStatistics()
         alert("Are you ready for the next question?")
-        // If question is not above 10 then 
-        // getQuestion()
+        this.getQuestion(this.gameObject)
     }
     async updateStatistics() {
         this.questionNumber = gameobjectquestionnumber + "/10"
@@ -119,14 +107,26 @@ class Game {
             }
         }
         const response = await fetch("https://trivia-api-cse-341.herokuapp.com/api/saveGame", postScore).then(convertToJson)
-        console.log(response)
         return response
+
+    }
+    async collectAnswer() {
+        document.querySelector("#answer-one-div").addEventListener("click", game.submitAnswer)
+        document.querySelector("#answer-two-div").addEventListener("click", game.submitAnswer)
+        document.querySelector("#answer-three-div").addEventListener("click", game.submitAnswer)
+        document.querySelector("#answer-four-div").addEventListener("click", game.submitAnswer)
 
     }
 }
 
 function gameLoop() {
-    console.log("This is the game loop!")
+    let game = new Game()
+    document.querySelector("#start-game-button").addEventListener("submit", game.sendStartGameData)
+
+    // while game.getquestion.questionNumber != 10 {
+    game.getQuestion(this.gameObject)
+    game.collectAnswer()
+    game.updateStatistics()
     // get game
     // get question
     // wait for answer
@@ -136,15 +136,8 @@ function gameLoop() {
     // play until question is the 10th question
     // call submitScore function & end game
     // Send them to their profile page
-
-    let game = new Game()
-    game.sendStartGameData()
-    game.getGame()
+    // }
 
 
-    document.querySelector("#answer-one-div").addEventListener("click", game.submitAnswer)
-    document.querySelector("#answer-two-div").addEventListener("click", game.submitAnswer)
-    document.querySelector("#answer-three-div").addEventListener("click", game.submitAnswer)
-    document.querySelector("#answer-four-div").addEventListener("click", game.submitAnswer)
 }
 gameLoop()
