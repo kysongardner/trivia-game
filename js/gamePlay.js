@@ -1,18 +1,22 @@
+// get game
+// get question
+// 
+
+
 class Game {
     constructor() {
-        this.game = 0
-        this.points = document.querySelector("#points")
-        this.questionNumber = document.querySelector("#question-number")
-        this.question = document.querySelector("#gameplay-question")
-        this.answerOne = document.querySelector("#answer-one-div")
-        this.answerTwo = document.querySelector("#answer-two-div")
-        this.answerThree = document.querySelector("#answer-three-div")
-        this.answerFour = document.querySelector("#answer-four-div")
+        this.game = "" // set this equal to the game object
+        this.points = 0
+        this.questionNumber = 0
+        this.question = ""
+        this.answerOne = ""
+        this.answerTwo = ""
+        this.answerThree = ""
+        this.answerFour = ""
         this.correctAnswer = 0 // This would point to the correct answer in the json object
         this.answerChosen = ""
+        this.token = ""
     }
-
-
     convertToJson(res) {
         if (res.ok) {
             return res.json()
@@ -25,36 +29,58 @@ class Game {
         }
     }
 
-    submitAnswer(answer) {
+
+    async getQuestion(gameObject) {
+        this.questionNumber = gameObject.question.number
+        this.question = gameObject.questionNumber.question
+        this.answerOne = gameObject.question.answerOne
+        this.answerTwo = gameObject.question.answerTwo
+        this.answerThree = gameObject.question.answerThree
+        this.answerFour = gameObject.question.answerFour
+
+        document.querySelector("#question-number").innerHTML = this.questionNumber + "/10"
+        document.querySelector("#answer-one-div").innerHTML = this.answerOne
+        document.querySelector("#answer-two-div").innerHTML = this.answerTwo
+        document.querySelector("#answer-three-div").innerHTML = this.answerThree
+        document.querySelector("#answer-four-div").innerHTML = this.answerFour
+
+
+    }
+    async submitAnswer(answer) {
         console.log(answer.target.id)
         this.answerChosen = answer.target.id
+        let correctAnswer = false
         if (answer.target.id == "answer-one-div") {
-            this.answerChosen = 1
+            if (this.answerOne.isCorrect) {
+                correctAnswer = true
+            }
         } else if (answer.target.id == "answer-two-div") {
-            this.answerChosen = 2
+            if (this.answerTwo.isCorrect) {
+                correctAnswer = true
+            }
         } else if (answer.target.id == "answer-three-div") {
-            this.answerChosen = 3
+            if (this.answerThree.isCorrect) {
+                correctAnswer = true
+            }
         } else if (answer.target.id == "answer-four-div") {
-            this.answerChosen = 4
+            if (this.answerFour.isCorrect) {
+                correctAnswer = true
+            }
         }
-        // if json object answer == this.answerChosen
-        // then add 100 points and render new question
-        // if the answer chosen isn't the json object answer 
-        // then don't add points and render next question
+        if (correctAnswer) {
+            this.points += 100
+        }
+        this.updateStatistics()
+        alert("Are you ready for the next question?")
+        // If question is not above 10 then 
+        // getQuestion()
+    }
+    async updateStatistics() {
+        this.questionNumber = gameobjectquestionnumber + "/10"
+        document.querySelector("#question-number").innerHTML = this.questionNumber
+        document.querySelector("#points").innerHTML = this.points
     }
 
-    async getGame() {
-        this.game = await fetch("https://trivia-api-cse-341.herokuapp.com/api/getGame", this.getGame).then(this.convertToJson)
-        console.log(game)
-    }
-
-    getQuestion() {
-        // get game object
-        // load first question
-        // set an incrementor to increment to next question
-        this.questionNumber = this.game.question2
-        this.question = this.game.question2.question
-    }
 
     // Send the userId, and score to user database table
     async postScore(e) {
@@ -76,10 +102,48 @@ class Game {
     }
 }
 
-let game = new Game()
-game.getGame()
+// function gameLoop() {
+//     console.log("This is the game loop!")
+//     // get game
+//     // get question
+//     // wait for answer
+//     // update statistics
+//     // wait for them to be ready
+//     // get question
+//     // play until question is the 10th question
+//     // call submitScore function & end game
+//     // Send them to their profile page
 
-let answerOne = document.querySelector("#answer-one-div").addEventListener("click", game.submitAnswer)
-let answerTwo = document.querySelector("#answer-two-div").addEventListener("click", game.submitAnswer)
-let answerThree = document.querySelector("#answer-three-div").addEventListener("click", game.submitAnswer)
-let answerFour = document.querySelector("#answer-four-div").addEventListener("click", game.submitAnswer)
+//     let game = new Game()
+//     game.sendStartGameData()
+
+//     document.querySelector("#answer-one-div").addEventListener("click", game.submitAnswer)
+//     document.querySelector("#answer-two-div").addEventListener("click", game.submitAnswer)
+//     document.querySelector("#answer-three-div").addEventListener("click", game.submitAnswer)
+//     document.querySelector("#answer-four-div").addEventListener("click", game.submitAnswer)
+// }
+// gameLoop()
+
+async function sendStartGameData() {
+    let url_url = window.location.href
+    let url = new URL(url_url)
+    let difficulty = url.searchParams.get("difficulty")
+    let category = url.searchParams.get("category")
+    let token = window.localStorage.getItem("token")
+    console.log(token)
+
+    
+
+    fetch(`https://trivia-api-cse-341.herokuapp.com/api/getGame?difficulty=${difficulty}&category=${category}`, {
+            method: "GET",
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+        .then((response) => {
+            response.json()
+            console.log(response)
+        })
+}
+
+sendStartGameData()

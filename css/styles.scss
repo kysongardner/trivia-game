@@ -6,9 +6,28 @@ $bottom-right: green;
 $question-input-box: lavender;
 $button-background-color: #00ccff;
 
-.htmlHeight, .YPGradient {
+.htmlHeight,
+.YPGradient {
+
+html {
   height: 100%;
+}
+}
+body {
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   background-image: linear-gradient(to bottom right, #FFBE0B, #FF006E);
+}
+
+.PGGradient {
+  background-image: linear-gradient(to bottom right, #a87be7, rgb(64, 204, 64));
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
 
 // HEADER
@@ -26,6 +45,7 @@ main {
 header {
   span {
     display: inline-block;
+
     div {
       width: 35px;
       height: 5px;
@@ -33,6 +53,7 @@ header {
       transition: 0.5s;
     }
   }
+
   .button {
     transition: 0.5s;
     position: fixed;
@@ -42,12 +63,14 @@ header {
     margin-right: 50px;
     margin-top: 15px;
   }
+
   .bar1,
   .bar2,
   .bar3 {
     margin-top: 6px;
     border-radius: 100px;
   }
+
   position: fixed;
   top: 0;
   float: right;
@@ -61,16 +84,25 @@ header {
 }
 
 .sidenav {
-  height: 100%; /* 100% Full-height */
-  width: 0; /* 0 width - change this with JavaScript */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
+  height: 100%;
+  /* 100% Full-height */
+  width: 0;
+  /* 0 width - change this with JavaScript */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Stay on top */
+  top: 0;
+  /* Stay at the top */
   right: 0;
-  background-color: black; /* Black*/
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 80px; /* Place content 60px from the top */
-  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  background-color: black;
+  /* Black*/
+  overflow-x: hidden;
+  /* Disable horizontal scroll */
+  padding-top: 80px;
+  /* Place content 60px from the top */
+  transition: 0.5s;
+  /* 0.5 second transition effect to slide in the sidenav */
 }
 
 /* The navigation menu links */
@@ -122,25 +154,28 @@ footer {
 .required {
   color: red;
 }
-footer{
+
+footer {
   margin-top: 1em;
 }
 
 // buttons
-input[type=submit]{
+input[type=submit] {
   border-radius: 8px;
   padding: 1em;
   background-color: #00ccff;
   font-size: x-large;
   transition-duration: 0.4s;
+
   &:hover {
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
     background-color: #008cff;
   }
 }
 
 .loginButtonContainer {
-    text-align: center;
+  text-align: center;
+
   a {
     text-decoration: none;
     color: #0A8754;
@@ -158,22 +193,16 @@ fieldset {
   background-color: white;
 }
 
-#login-button{
+#login-button {
   width: 7em;
 }
-#login-button-label, #login-button-label a{
+
+#login-button-label,
+#login-button-label a {
   text-align: center;
 }
+
 .loginFieldset {
-  width: 5em;
-  margin: 0 auto;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #666;
-  position: relative;
-}
-
-
-.signUpFieldset {
   width: 5em;
   margin: 0 auto;
   border-radius: 10px;
@@ -192,6 +221,7 @@ input[type=text] {
   margin-bottom: 2em;
   border-radius: 10px;
 }
+
 label,
 button {
   font-size: x-large;
@@ -207,14 +237,17 @@ input[type="password"] {
   margin-bottom: 2em;
   border-radius: 10px;
 }
+
 .signUpButtonContainer {
   text-align: center;
+
   a {
     text-align: center;
     text-decoration: none;
     color: #0A8754;
   }
 }
+
 #signup-button {
   width: 7em;
   border-radius: 8px;
@@ -222,21 +255,11 @@ input[type="password"] {
   background-color: #00ccff;
   font-size: x-large;
   transition-duration: 0.4s;
+
   &:hover {
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
     background-color: #008cff;
   }
-}
-
-
-
-.signUpFieldset {
-  width: 5em;
-  margin: 0 auto;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #666;
-  position: relative;
-  height: 750px;
 }
 
 .signUpFieldset {
@@ -259,7 +282,7 @@ input[type="password"] {
   max-width: 800px;
 }
 
-.question-input::placeholder{
+.question-input::placeholder {
   color: white;
 }
 
@@ -312,49 +335,66 @@ input[type="password"] {
   border: 2px solid black;
   background-color: $bottom-right;
 }
+
 #topics-container {
   margin-top: -5em;
   grid-column: 1/2;
 }
+
 #difficulty-container {
   margin-top: -5em;
   grid-column: 2/3;
 }
+
 #add-question {
   grid-column: 1/-1;
   margin-top: -1em;
   padding: 1em;
+  transition-duration: 0.4s;
+  border-radius: 8px;
+  &:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    background-color: #008cff;
+  }
 }
-@media only screen and (max-width: 600px){
-  #grid-container-add-question{
-    display:block;
+
+@media only screen and (max-width: 600px) {
+  #grid-container-add-question {
+    display: block;
     margin: 0 auto;
     max-width: 50%;
     text-align: center;
   }
-  #answer-one{
+
+  #answer-one {
     margin-top: 2em;
   }
-  #answer-two{
+
+  #answer-two {
     margin-top: 1em;
   }
-  #answer-three{
+
+  #answer-three {
     margin-top: 1em;
   }
-  #answer-four{
+
+  #answer-four {
     margin-top: 1em;
   }
-  #topics-container{
+
+  #topics-container {
     margin-top: 1em;
   }
-  #difficulty-container{
+
+  #difficulty-container {
     margin-top: 1em;
   }
-  #add-question{
+
+  #add-question {
     text-align: center;
     margin-top: 1em;
   }
-  
+
 }
 
 // Gameplay Page
@@ -368,15 +408,32 @@ input[type="password"] {
   margin: 0 auto;
   max-width: 800px;
 }
+
 #points-div {
-  grid-column: 1/-1;
+  margin-top: -0.5em;
+  grid-column: 1/1;
+  font-size: x-large;
 }
+
+#question-number-div {
+  margin-top: -0.5em;
+  grid-column: 2/2;
+  font-size: x-large;
+}
+
+#points {
+  padding-left: 0.2em;
+}
+
+#question-number {
+  padding-left: 0.2em;
+}
+
 #gameplay-question-container {
   grid-column: 1/-1;
+  font-size: 2em;
 }
-#gameplay-question {
-  // you would generate the actual question here
-}
+
 #answer-one-div {
   color: white;
   grid-column: 1/2;
@@ -425,26 +482,96 @@ input[type="password"] {
   background-color: $bottom-right;
 }
 
+@media only screen and (max-width: 600px) {
+  #grid-container-gameplay {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    margin: 0 auto;
+    max-width: 800px;
+  }
+
+  #points-div {
+    margin-top: 0.5em;
+  }
+
+  #question-number-div {
+    margin-top: 0.5em;
+  }
+  #answer-one-div {
+    color: white;
+    grid-column: 1/2;
+    padding-top:1.5em;
+    width: 5em;
+    height: 5em;
+  }
+  
+  #answer-two-div {
+    color: white;
+    grid-column: 2/3;
+    padding-top:1.5em;
+    width: 5em;
+    height: 5em;
+  }
+  
+  #answer-three-div {
+    color: white;
+    grid-column: 1/2;
+    padding-top:1.5em;
+    width: 5em;
+    height: 5em;
+  }
+  
+  #answer-four-div {
+    color: white;
+    grid-column: 2/3;
+    padding-top:1.5em;
+    width: 5em;
+    height: 5em;
+  }
+}
+
 // Start Game
+
+.startGameFieldset {
+  width: max-content;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
 #start-game-header {
-  background-color: lavender;
+  background-color: #00ccff;
   padding: 0.1em;
   text-align: center;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  width: 400px;
+  border-radius: 8px;
 }
+
 #start-game-topics-container {
-  background-color: lavender;
+  background-color: #00ccff;
   margin-top: 1em;
   padding: 0.5em;
   text-align: center;
   font-size: x-large;
+  margin: 0 auto;
+  margin-top: 15px;
+  width: 400px;
+  border-radius: 8px;
 }
-#start-game-fieldset{
+
+#start-game-fieldset {
   width: 17em;
   text-align: center;
+  margin: 0 auto;
+  border-radius: 8px;
 }
+
 .difficulty-label {
   max-width: 100%;
 }
+
 #start-game-topics {
   font-size: 1.5rem;
 }
@@ -452,10 +579,12 @@ input[type="password"] {
 #start-game-topics option {
   font-size: x-large;
 }
+
 #start-game-button-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
+
 #start-game-button {
   grid-column: 2/3;
   margin-top: 1em;
@@ -464,6 +593,10 @@ input[type="password"] {
 }
 
 // High Scores
+
+.profileMain {
+  text-align: center;
+}
 
 #high-scores {
   display: table;
@@ -476,6 +609,7 @@ table {
   max-width: 100%;
   margin-top: 1em;
 }
+
 table,
 th,
 tr,
@@ -485,50 +619,21 @@ td {
   padding: 1em;
   font-size: 25px;
 }
+
 th {
   background-color: #00ccff;
 }
+
 tr:nth-child(odd) {
   background-color: #e6faff;
 }
+
 tr:nth-child(even) {
   background-color: #ccf5ff;
 }
 
-@media only screen and (max-width: 600px){
-  #grid-container-gameplay{
-    display:block;
-    margin: 0 auto;
-    max-width: 50%;
-  }
-  #answer-one-div {
-    width: 75%;
-    height: 75%;
-    margin-top: 2em;
-  }
-  
-  #answer-two-div {
-    width: 75%;
-    height: 75%;
-    margin-top: 1em;
-  }
-  
-  #answer-three-div {
-    width: 75%;
-    height: 75%;
-    margin-top: 1em;
-  }
-  
-  #answer-four-div {
-    width: 75%;
-    height: 75%;
-    margin-top: 1em;
-  }
-  
-}
-
-@media only screen and(max-width: 500px){
-  #login-fieldset{
+@media only screen and(max-width: 500px) {
+  #login-fieldset {
     max-width: 5em;
   }
 }
