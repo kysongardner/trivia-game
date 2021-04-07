@@ -15,6 +15,7 @@ class Game {
         this.answerFour = ""
         this.correctAnswer = 0 // This would point to the correct answer in the json object
         this.answerChosen = ""
+        this.token = ""
     }
     convertToJson(res) {
         if (res.ok) {
@@ -27,31 +28,7 @@ class Game {
             }
         }
     }
-    async sendStartGameData() {
-        let url_url = window.location.href
-        let url = new URL(url_url)
-        let difficulty = url.searchParams.get("difficulty")
-        let category = url.searchParams.get("category")
 
-        console.log(difficulty)
-        console.log(category)
-        fetch(`https://trivia-api-cse-341.herokuapp.com/api/getGame?difficulty=${difficulty}&category=${category}`, {
-                method: "GET",
-            })
-            .then((response) => {
-                this.getGame(response)
-            }).then(getGame(gameObject))
-    }
-    async getGame(gameObject) {
-        // Get the game and then send the individual question 
-        // object to the get question function
-        for (const question in gameObject) {
-            this.questionNumber = gameObject.Question.Number
-            this.getQuestion(this.questionNumber)
-        }
-
-        // set different properties to the gameObject properties.
-    }
 
     async getQuestion(gameObject) {
         this.questionNumber = gameObject.question.number
@@ -125,26 +102,48 @@ class Game {
     }
 }
 
-function gameLoop() {
-    console.log("This is the game loop!")
-    // get game
-    // get question
-    // wait for answer
-    // update statistics
-    // wait for them to be ready
-    // get question
-    // play until question is the 10th question
-    // call submitScore function & end game
-    // Send them to their profile page
+// function gameLoop() {
+//     console.log("This is the game loop!")
+//     // get game
+//     // get question
+//     // wait for answer
+//     // update statistics
+//     // wait for them to be ready
+//     // get question
+//     // play until question is the 10th question
+//     // call submitScore function & end game
+//     // Send them to their profile page
 
-    let game = new Game()
-    game.sendStartGameData()
-    game.getGame()
+//     let game = new Game()
+//     game.sendStartGameData()
 
+//     document.querySelector("#answer-one-div").addEventListener("click", game.submitAnswer)
+//     document.querySelector("#answer-two-div").addEventListener("click", game.submitAnswer)
+//     document.querySelector("#answer-three-div").addEventListener("click", game.submitAnswer)
+//     document.querySelector("#answer-four-div").addEventListener("click", game.submitAnswer)
+// }
+// gameLoop()
 
-    document.querySelector("#answer-one-div").addEventListener("click", game.submitAnswer)
-    document.querySelector("#answer-two-div").addEventListener("click", game.submitAnswer)
-    document.querySelector("#answer-three-div").addEventListener("click", game.submitAnswer)
-    document.querySelector("#answer-four-div").addEventListener("click", game.submitAnswer)
+async function sendStartGameData() {
+    let url_url = window.location.href
+    let url = new URL(url_url)
+    let difficulty = url.searchParams.get("difficulty")
+    let category = url.searchParams.get("category")
+    let token = window.localStorage.getItem("token")
+    console.log(token)
+
+    
+
+    fetch(`https://trivia-api-cse-341.herokuapp.com/api/getGame?difficulty=${difficulty}&category=${category}`, {
+            method: "GET",
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+        .then((response) => {
+            response.json()
+            console.log(response)
+        })
 }
-gameLoop()
+
+sendStartGameData()

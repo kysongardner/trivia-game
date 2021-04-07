@@ -32,10 +32,9 @@ async function login(e){
     }
     const response = await fetch("http://trivia-api-cse-341.herokuapp.com/api/login", login).then(convertToJson)
     console.log(response)
+    window.localStorage.setItem("token", response.token)
     if (response.isAuth){
         return response
-    }else{
-        alert("Email not found. Try again or create an account.")
     }
     
     

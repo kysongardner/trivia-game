@@ -91,6 +91,10 @@ async function addQuestion(e) {
             'Content-Type': 'application/json'
         }
     }
-    const response = await fetch("https://trivia-api-cse-341.herokuapp.com/api/submit-question", addQuestion).then(convertToJson)
+    const response = await fetch("https://trivia-api-cse-341.herokuapp.com/api/submit-question", addQuestion)
+        .then((res) => {
+            res.json()
+            console.log(res)
+        })
     console.log(response)
 }
